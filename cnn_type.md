@@ -50,3 +50,12 @@ Ref:
 * Deformable Convolutional Networks https://arxiv.org/abs/1703.06211  doi: 10.1109/ICCV.2017.89 
 
 * https://towardsdatascience.com/review-dcn-deformable-convolutional-networks-2nd-runner-up-in-2017-coco-detection-object-14e488efce44
+
+
+
+## Spatial Pyramid Pooling 
+
+Effect: 
+
+- eliminate "fixed size" requirement for convolution neural network with fully connected layer (FC layer): https://arxiv.org/abs/1406.4729 
+- extract multi-scale feature https://arxiv.org/abs/1811.10452 
