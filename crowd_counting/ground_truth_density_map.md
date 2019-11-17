@@ -15,7 +15,7 @@ $$
 H(\boldsymbol{x})=\sum_{i=1}^{N} \delta\left(\boldsymbol{x}-\boldsymbol{x}_{i}\right)
 $$
 
-We can convolve with Gaussian kernel to make density map
+We can convolve with Gaussian kernel to make head density map function
 
 $$
 F(\boldsymbol{x})=H(\boldsymbol{x}) * G_{\sigma}(\boldsymbol{x})
@@ -28,8 +28,24 @@ $$
 \delta\left(\boldsymbol{x}-\boldsymbol{x}_{i}\right)
 $$
 
+## Geometry-adaptive kernels
 
 
+
+For each head x_i, we calculate distance to k nearest head. Average distance is: 
+$$
+\bar{d}^{i}=\frac{1}{m} \sum_{j=1}^{m} d_{j}^{i}
+$$
+
+
+We convolve H(x) with Gaussian kernel with variance proportional to average distance. We have geometry head density map function: 
+$$
+F(\boldsymbol{x})=\sum_{i=1}^{N} \delta\left(\boldsymbol{x}-\boldsymbol{x}_{i}\right) * G_{\sigma_{i}}(\boldsymbol{x})
+$$
+with variance 
+$$
+\sigma_{i}=\beta \bar{d}^{i}
+$$
 
 
 [MCNN](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Zhang_Single-Image_Crowd_Counting_CVPR_2016_paper.pdf) 

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>ICCV2019</title>
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="iccv2019">ICCV2019</h1>
+<p>We review ICCV2019 paper in crowd counting</p>
+<h3 id="perspective-guided-convolution-networks-for-crowd-counting-pgc">Perspective-Guided Convolution Networks for Crowd Counting (PGC)</h3>
+<p><u>Solve the problem</u>: <strong>Dramatic intra-scene scale variations of people due to the perspective effect.</strong></p>
+<p>PGC use perspective information</p>
+<p>Normalize perspective map, alpha and beta is trainable parameter <br /><span class="math display">$$
+\widetilde{\mathbf{p}}=\zeta(\mathbf{p})=\frac{1}{1+e^{-\alpha(\mathbf{p}-\beta)}}
+$$</span><br /> Blur map, alpha and p_0 is trainable <br /><span class="math display">$$
+\boldsymbol{\sigma}=\max \left(a\left(\widetilde{\mathbf{p}}-p_{0}\right), 0\right)
+$$</span><br /> Gaussian kernel <br /><span class="math display">$$
+G_{\sigma_{i, j}}(i, j, k, l)=\frac{1}{\sqrt{2 \pi} \sigma_{i, j}} \exp \left(-\frac{\left((k-i)^{2}+(l-j)^{2}\right)}{2 \sigma_{i, j}^{2}}\right)
+$$</span><br /> And so, Smoothing result x at (i, j) <br /><span class="math display"><em>x̃</em><sub><em>i</em>, <em>j</em></sub> = ∑<sub><em>k</em></sub>∑<sub><em>l</em></sub><em>x</em><sub><em>k</em>, <em>l</em></sub><em>G</em><sub><em>σ</em><sub><em>i</em>, <em>j</em></sub></sub>(<em>i</em>, <em>j</em>, <em>k</em>, <em>l</em>)</span><br /></p>
+</body>
+</html>
